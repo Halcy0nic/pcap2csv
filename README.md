@@ -22,8 +22,8 @@ This tool converts PCAP (Packet Capture) files to CSV (Comma-Separated Values) f
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/pcap-to-csv-converter.git
-   cd pcap-to-csv-converter
+   git clone https://github.com/Halcy0nic/pcap2csv.git
+   cd pcap2csv
    ```
 
 2. Install the required Python packages:
