@@ -8,6 +8,7 @@ This tool converts PCAP (Packet Capture) files to CSV (Comma-Separated Values) f
 
 - Converts PCAP files to CSV format
 - Extracts all available fields from each packet
+- Removes duplicate fields from the output
 - Maintains consistent field ordering in the output
 - Provides progress updates during conversion
 - Easy-to-use command-line interface
@@ -17,6 +18,7 @@ This tool converts PCAP (Packet Capture) files to CSV (Comma-Separated Values) f
 - Python 3.6+
 - pyshark
 - tshark (Wireshark command-line interface)
+- pandas
 
 ## Installation
 
@@ -28,7 +30,7 @@ This tool converts PCAP (Packet Capture) files to CSV (Comma-Separated Values) f
 
 2. Install the required Python packages:
    ```
-   pip install pyshark
+   pip install pyshark pandas
    ```
 
 3. Ensure tshark is installed on your system. It comes with Wireshark, or you can install it separately.
@@ -52,7 +54,6 @@ The script will create a CSV file with the following characteristics:
 
 - Each row represents a packet from the PCAP file
 - Columns include all fields extracted from the packets
-- The first column, 'layers', lists the protocol layers present in each packet
 - Subsequent columns are named in the format `layer_name.field_name`
 
 ## Limitations
