@@ -6,13 +6,13 @@ from collections import OrderedDict
 def extract_fields(packet):
     """Extract all fields from a packet."""
     fields = OrderedDict()
-    
-    # Extract layer names
-    layer_names = [layer.layer_name for layer in packet.layers]
-    fields['layers'] = ':'.join(layer_names)
-    
+
+    # Sets layers to extract from
+    layers = [packet.frame_info]
+    layers.extend(packet.layers)
+
     # Extract fields from each layer
-    for layer in packet.layers:
+    for layer in layers:
         for field_name in layer.field_names:
             try:
                 field_value = getattr(layer, field_name)
